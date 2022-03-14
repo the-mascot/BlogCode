@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>i18n 다국어 적용하기</title>
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js}"></script>
+</head>
+<body>
+	<select id="selectLang">
+		<option value="ko">한국어</option>
+		<option value="en">영어</option>
+	</select>
+	<h2 th:text="#{index.1}"></h2>
+	<p th:text="#{index.2}">
+	<p id="lang">
+</body>
+<script type="text/javascript">
+	$("#selectLang").on("change", function() {
+		$("#lang").html($("#selectLang option:selected").val());
+	});
+</script>
+</html>
